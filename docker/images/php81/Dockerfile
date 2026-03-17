@@ -1,4 +1,4 @@
-FROM php:8.1-cli-alpine
+FROM php:8.2-cli-alpine
 
 WORKDIR /app
 
@@ -41,7 +41,7 @@ RUN docker-php-ext-install intl opcache \
 
 # fix work iconv library with alphine
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted gnu-libiconv
-ENV LD_PRELOAD /usr/lib/preloadable_libiconv.so php
+# ENV LD_PRELOAD /usr/lib/preloadable_libiconv.so php
 ENV NODE_PATH "/home/www-data/.npm-global/lib/node_modules"
 
 RUN apk add --no-cache nodejs npm && \
