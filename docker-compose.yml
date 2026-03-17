@@ -9,6 +9,24 @@ services:
             - "6969:8000"
         networks:
             - cluster
+
+    db-local:
+        image: mysql:9.6.0
+        restart: unless-stopped
+        healthcheck:
+            test: ["CMD-SHELL", "mysqladmin ping -h localhost -u test -ptest"]
+            interval: 10s
+            timeout: 10s
+            retries: 3
+            start_period: 10s
+        environment:
+            MYSQL_DATABASE: test
+            MYSQL_ROOT_PASSWORD: test
+        expose:
+            - "3306"
+        networks:
+            - cluster
+
 networks:
     cluster:
         name: cluster
