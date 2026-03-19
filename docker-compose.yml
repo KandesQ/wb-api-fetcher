@@ -9,6 +9,11 @@ services:
             - "6969:8000"
         networks:
             - cluster
+        depends_on: # Remove in prod
+            db-local:
+                condition: service_healthy
+                restart: true
+
 
     db-local:
         image: mysql:9.6.0
@@ -22,6 +27,8 @@ services:
         environment:
             MYSQL_DATABASE: test
             MYSQL_ROOT_PASSWORD: test
+            MYSQL_CHARSET: utf8mb4
+            MYSQL_COLLATION: utf8mb4_unicode_ci
         expose:
             - "3306"
         networks:
