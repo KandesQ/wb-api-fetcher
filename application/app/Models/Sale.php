@@ -39,6 +39,36 @@ class Sale extends Model
         "is_storno"
     ];
 
+    protected $casts = [
+        "sale_id" => "string",
+        "g_number" => "string",
+        "date" => "date",
+        "last_change_date" => "date",
+        "supplier_article" => "string",
+        "tech_size" => "string",
+        "barcode" => "integer",
+        "total_price" => "string",
+        "discount_percent" => "string",
+        "is_supply" => "boolean",
+        "is_realization" => "boolean",
+        "promo_code_discount" => "string",
+        "warehouse_name" => "string",
+        "country_name" => "string",
+        "oblast_okrug_name" => "string",
+        "region_name" => "string",
+        "income_id" => "string",
+        "odid" => "string",
+        "spp" => "string",
+        "for_pay" => "string",
+        "finished_price" => "string",
+        "price_with_disc" => "string",
+        "nm_id" => "string",
+        "subject" => "string",
+        "category" => "string",
+        "brand" => "string",
+        "is_storno" => "boolean"
+    ];
+
     protected $hidden = [
         'updated_at',
         'created_at',
