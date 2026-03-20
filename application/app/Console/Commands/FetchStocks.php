@@ -41,8 +41,8 @@ class FetchStocks extends WbApiAbstractCommand
         'category' => 'nullable|string',
         'brand' => 'nullable|string',
         'sc_code' => 'required|integer',
-        'price' => 'nullable|numeric',
-        'discount' => 'nullable|numeric',
+        'price' => 'nullable|string',
+        'discount' => 'nullable|string',
     ];
 
     public function __construct()
