@@ -21,7 +21,7 @@ class FetchOrders extends WbApiAbstractCommand
      *
      * @var string
      */
-    protected $description = 'Fetches all orders data from the WB API';
+    protected $description = 'Fetches orders data from the WB API for all time';
 
     private const ORDER_VALIDATION_RULES = [
         "g_number" => "required|string",

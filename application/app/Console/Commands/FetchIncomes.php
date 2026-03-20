@@ -21,7 +21,7 @@ class FetchIncomes extends WbApiAbstractCommand
      *
      * @var string
      */
-    protected $description = "Fetches incomes data from the WB API for the current day";
+    protected $description = "Fetches incomes data from the WB API for all time";
 
     private const INCOME_VALIDATION_RULES = [
         "income_id" => "required|numeric",

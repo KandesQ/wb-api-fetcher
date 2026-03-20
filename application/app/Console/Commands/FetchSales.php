@@ -21,7 +21,7 @@ class FetchSales extends WbApiAbstractCommand
      *
      * @var string
      */
-    protected $description = 'Fetches sales data from the WB API for the current day';
+    protected $description = 'Fetches sales data from the WB API for all time';
 
     private const SALE_VALIDATION_RULES = [
         "g_number" => "nullable|string",
