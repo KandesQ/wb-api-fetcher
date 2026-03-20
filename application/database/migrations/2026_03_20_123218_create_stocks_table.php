@@ -40,8 +40,8 @@ class CreateStocksTable extends Migration
             $table->string("brand")->nullable();
             $table->integer("sc_code");
             
-            $table->decimal("price")->nullable();
-            $table->decimal("discount")->nullable();
+            $table->decimal("price", 10, 2)->nullable();
+            $table->decimal("discount", 3, 2)->nullable();
 
             $table->unique(["nm_id", "sc_code", "barcode", "warehouse_name"]);
         });
